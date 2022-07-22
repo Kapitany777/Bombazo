@@ -1,15 +1,9 @@
-Bombázó játék
+BombÃ¡zÃ³ jÃ¡tÃ©k
 
- Ez egy igen régi játékötlet megvalósítása PC-n. Az ötlet valóban régi: én
-VC-20-on láttam elôször. A cél: a házak lebombázása a SPACE billentyu nyom-
-kodásával. Ez valószínuleg ez esetben nem megy, mivel a házak túl magasak. 
-A program érdekessége inkább az, hogy teljesen assembly nyelven készült, 
-a forráskódot pedig mellékeltem.
+Ez egy igen rÃ©gi jÃ¡tÃ©kÃ¶tlet megvalÃ³sÃ­tÃ¡sa PC-n DOS-ra. Az Ã¶tlet valÃ³ban rÃ©gi: Ã©n egy Commodore VIC-20-on lÃ¡ttam elÃ´szÃ¶r. A cÃ©l: a hÃ¡zak lebombÃ¡zÃ¡sa a SPACE billentyÅ± nyomkodÃ¡sÃ¡val. Ez valÃ³szÃ­nÅ±leg ez esetben nem megy, mivel a hÃ¡zak tÃºl magasak. A program Ã©rdekessÃ©ge inkÃ¡bb az, hogy teljesen assembly nyelven kÃ©szÃ¼lt, a forrÃ¡skÃ³dot pedig mellÃ©keltem.
 
- A fordítás TASM assemblerrel történik, az összeszerkesztés pedig a TLINK
-programmal.
+A fordÃ­tÃ¡s TASM assemblerrel tÃ¶rtÃ©nik, az Ã¶sszeszerkesztÃ©s pedig a TLINK programmal.
 
- Jó szórakozást!
+JÃ³ szÃ³rakozÃ¡st!
 
- Kapitány
-
+KapitÃ¡ny
