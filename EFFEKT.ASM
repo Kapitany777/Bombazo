@@ -1,10 +1,10 @@
 ;/**************************************************************************\
 ;*                                                                          *
-;*                     Rutinok a "Bomb†z¢" c.programhoz                     *
+;*                     Rutinok a "Bomb√°z√≥" c.programhoz                     *
 ;*                                                                          *
-;*                                  årta :                                  *
+;*                                  √çrta :                                  *
 ;*                                                                          *
-;*                               Tîrîk Viktor                               *
+;*                               T√∂r√∂k Viktor                               *
 ;*                                                                          *
 ;*                            ANNO DOMINI MCMXCVI                           *
 ;*                                                                          *
@@ -17,7 +17,7 @@ CODE_SEG SEGMENT
  EXTRN Randomize : PROC, Random : PROC
 
 ;********************************
-; A kÇpernyì r†z†sa
+; A k√©perny≈ë r√°z√°sa
 ;********************************
 
  PUBLIC Razas
