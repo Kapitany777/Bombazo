@@ -1,10 +1,10 @@
 ;/**************************************************************************\
 ;*                                                                          *
-;*                     Alapvetì kÇpernyìkezelì rutinok                      *
+;*                     Alapvet≈ë k√©perny≈ëkezel≈ë rutinok                      *
 ;*                                                                          *
-;*                                  årta :                                  *
+;*                                  √çrta :                                  *
 ;*                                                                          *
-;*                              Tîrîk Viktor                                *
+;*                              T√∂r√∂k Viktor                                *
 ;*                                                                          *
 ;*                           ANNO DOMINI MCMXCVI                            *
 ;*                                                                          *
@@ -18,15 +18,15 @@ _STACK SEGMENT STACK
 
 _STACK ENDS
 
-;------------------------------- K¢dszegmens -------------------------------
+;------------------------------- K√≥dszegmens -------------------------------
 
 _CODE SEGMENT
 
  ASSUME CS : _CODE, DS : _CODE, ES : _CODE, SS : _STACK
 
 ;---------------------------------------
-; KÇpernyìtîrlÇs
-; Bemenì adatok : dl - a h†ttÇrsz°n
+; K√©perny≈ët√∂rl√©s
+; Bemen≈ë adatok : dl - a h√°tt√©rsz√≠n
 ;---------------------------------------
 
  PUBLIC Clear_Screen
@@ -59,7 +59,7 @@ _CODE SEGMENT
  Clear_Screen ENDP
 
 ;-------------------------------
-; Kurzor kikapcsol†sa
+; Kurzor kikapcsol√°sa
 ;-------------------------------
 
  PUBLIC CursorOff
@@ -81,7 +81,7 @@ _CODE SEGMENT
  CursorOff ENDP
 
 ;-------------------------------
-; Kurzor bekapcsol†sa
+; Kurzor bekapcsol√°sa
 ;-------------------------------
 
  PUBLIC CursorOn
@@ -103,13 +103,13 @@ _CODE SEGMENT
  CursorOn ENDP
 
 ;--------------------------------------------------
-; Szîveg ki°r†sa
+; Sz√∂veg ki√≠r√°sa
 ;
-; Bemenì adatok : BX    - szîveg X koordin†t†ja
-;                 CX    - szîveg Y koordin†t†ja   
-;                 DS:SI - a szîveg c°me
+; Bemen≈ë adatok : BX    - sz√∂veg X koordin√°t√°ja
+;                 CX    - sz√∂veg Y koordin√°t√°ja   
+;                 DS:SI - a sz√∂veg c√≠me
 ;
-; A szîveget 0-val kell lez†rni
+; A sz√∂veget 0-val kell lez√°rni
 ;--------------------------------------------------
 
  PUBLIC Write_Text_
@@ -166,11 +166,11 @@ _CODE SEGMENT
  Write_Text_ ENDP
 
 ;----------------------------------------------
-; Sz†m ki°r†sa
+; Sz√°m ki√≠r√°sa
 ;
-; Bemenì adatok : AX - a sz†m
-;                 BX - a sz†m X koordin†t†ja
-;                 CX - a sz†m Y koordin†t†ja
+; Bemen≈ë adatok : AX - a sz√°m
+;                 BX - a sz√°m X koordin√°t√°ja
+;                 CX - a sz√°m Y koordin√°t√°ja
 ;----------------------------------------------
 
  PUBLIC Write_Number_
@@ -191,14 +191,14 @@ _CODE SEGMENT
   mov ax,si
 
   mov si,0ah     ; 10-zel osztunk
-  mov cx,00h     ; vermelt sz†mjegyek sz†ma
+  mov cx,00h     ; vermelt sz√°mjegyek sz√°ma
 
  Nem_nulla :
   mov dx,00h
   div si         ; osztunk
-  push dx        ; ez a maradÇk
-  inc cx         ; +1 sz†mjegy
-  cmp ax,00h     ; nem fogyott mÇg el?
+  push dx        ; ez a marad√©k
+  inc cx         ; +1 sz√°mjegy
+  cmp ax,00h     ; nem fogyott m√©g el?
   jne Nem_nulla
 
  Kiiras :
