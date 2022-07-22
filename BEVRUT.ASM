@@ -1,10 +1,10 @@
 ;/**************************************************************************\
 ;*                                                                          *
-;*                    Bomb†z¢ j†tÇkprogram nÇh†ny rutinja                   *
+;*                    Bomb√°z√≥ j√°t√©kprogram n√©h√°ny rutinja                   *
 ;*                                                                          *
-;*                                   årta :                                 *
+;*                                   √çrta :                                 *
 ;*                                                                          *
-;*                               Tîrîk Viktor                               *
+;*                               T√∂r√∂k Viktor                               *
 ;*                                                                          *
 ;*                            ANNO DOMINI MCMXCVI                           *
 ;*                                                                          *
@@ -14,9 +14,9 @@
 
 _DATA SEGMENT
 
- BIGX dw 0         ; a szîveg X koordin†t†ja
+ BIGX dw 0         ; a sz√∂veg X koordin√°t√°ja
 
- BIGY dw 0         ; a szîveg Y koordin†t†ja
+ BIGY dw 0         ; a sz√∂veg Y koordin√°t√°ja
 
  kseg dw 0
  kofs dw 0
@@ -35,26 +35,26 @@ _STACK SEGMENT STACK
 
 _STACK ENDS
 
-;------------------------------- K¢dszegmens --------------------------------
+;------------------------------- K√≥dszegmens --------------------------------
 
 _CODE SEGMENT
 
  ASSUME CS : _CODE, DS : _DATA, ES : _CODE; SS : _STACK
 
 ;***************************************************
-; Nagy karakterek ki°r†sa
+; Nagy karakterek ki√≠r√°sa
 ;
-; Bemenì adatok : BX    - a szîveg X koordin†t†ja
-;                 CX    - a szîveg Y koordin†t†ja
-;                 ES:DI - a szîveg c°me
+; Bemen≈ë adatok : BX    - a sz√∂veg X koordin√°t√°ja
+;                 CX    - a sz√∂veg Y koordin√°t√°ja
+;                 ES:DI - a sz√∂veg c√≠me
 ;
-; A szîveget 0-val kell lez†rni.
+; A sz√∂veget 0-val kell lez√°rni.
 ;***************************************************
 
  PUBLIC Write_Big_Text
 
  ;--------------------------------------
- ; KarakterkÇszlet c°mÇnek lekÇrdezÇse
+ ; Karakterk√©szlet c√≠m√©nek lek√©rdez√©se
  ;--------------------------------------
 
  Karakterek_cime PROC
@@ -77,9 +77,9 @@ _CODE SEGMENT
  Karakterek_cime ENDP
 
  ;--------------------------------------
- ; Egy karakter ki°r†sa
- ; Bemenì adatok : al - karakter k¢dja
- ;                 bx - poz°ci¢
+ ; Egy karakter ki√≠r√°sa
+ ; Bemen≈ë adatok : al - karakter k√≥dja
+ ;                 bx - poz√≠ci√≥
  ;--------------------------------------
 
  Karakter_kiirasa PROC
@@ -114,7 +114,7 @@ _CODE SEGMENT
   add si,cim
   mov ds,kseg
 
-  mov dl,'€'
+  mov dl,'√õ'
   mov cx,8
 
  @E :
@@ -157,7 +157,7 @@ _CODE SEGMENT
  Karakter_kiirasa ENDP
 
  ;----------------------------------
- ; A szîvegki°r¢ elj†r†s
+ ; A sz√∂vegki√≠r√≥ elj√°r√°s
  ;----------------------------------
 
  Write_Big_Text PROC
@@ -203,11 +203,11 @@ _CODE SEGMENT
  Write_Big_Text ENDP
 
 ;*******************************
-; Rasztercs°k rajzol†sa
+; Rasztercs√≠k rajzol√°sa
 ;*******************************
 
  ;--------------------------------------
- ; V†rakoz†s az elektronsug†rra
+ ; V√°rakoz√°s az elektronsug√°rra
  ;--------------------------------------
 
  RasterWait PROC
@@ -229,7 +229,7 @@ _CODE SEGMENT
  RasterWait ENDP
 
  ;--------------------------------------
- ; V°zszintes visszafut†s
+ ; V√≠zszintes visszafut√°s
  ;--------------------------------------
 
  HorizRasterWait PROC
@@ -257,7 +257,7 @@ _CODE SEGMENT
  HorizRasterWait ENDP
 
  ;-------------------------------
- ; Rasztercs°k rajzol†sa
+ ; Rasztercs√≠k rajzol√°sa
  ;-------------------------------
 
  PUBLIC Raster_
@@ -270,7 +270,7 @@ _CODE SEGMENT
   push dx
   push ds
 
-  cli   	       ; Megszak°t†sok tilt†sa
+  cli   	       ; Megszak√≠t√°sok tilt√°sa
 
   mov ax,_DATA
   mov ds,ax
@@ -284,14 +284,14 @@ _CODE SEGMENT
   push cx
 
  @HW :
-  call HorizRasterWait   ; cx-szer v†runk a v°zszintes visszafut†sra
+  call HorizRasterWait   ; cx-szer v√°runk a v√≠zszintes visszafut√°sra
   loop @HW
 
   pop cx
 
   mov bx,0
 
- @PL1 :                       ; A paletta †ll°t†sa
+ @PL1 :                       ; A paletta √°ll√≠t√°sa
   mov dx,03c8h
   mov al,0
   out dx,al
@@ -312,7 +312,7 @@ _CODE SEGMENT
 
   mov bx,63
 
- @PL2 :                ; IsmÇt †ll°tjuk a palett†t
+ @PL2 :                ; Ism√©t √°ll√≠tjuk a palett√°t
   mov dx,03c8h
   mov al,0
   out dx,al
@@ -332,7 +332,7 @@ _CODE SEGMENT
 
   call HorizRasterWait
 
-  mov dx,03c8h                ; Ezent£l fekete sz°n kell
+  mov dx,03c8h                ; Ezent√∫l fekete sz√≠n kell
   mov al,0
   out dx,al
 
@@ -341,7 +341,7 @@ _CODE SEGMENT
   out dx,al
   out dx,al
 
-  add cx,pl                   ; cx v†ltoztat†sa
+  add cx,pl                   ; cx v√°ltoztat√°sa
   
   cmp cx,10
   ja @Tovabb
@@ -356,11 +356,11 @@ _CODE SEGMENT
   mov pl,ax 
 
  @Bill :
-  in al,60h                  ; SPACE-re kilÇpÅnk
+  in al,60h                  ; SPACE-re kil√©p√ºnk
   cmp al,57
   jne @Eleje
 
-  sti                        ; Megszak°t†sok engedÇlyezÇse
+  sti                        ; Megszak√≠t√°sok enged√©lyez√©se
 
   pop ds
   pop dx
