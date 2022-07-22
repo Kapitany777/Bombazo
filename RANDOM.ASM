@@ -1,12 +1,12 @@
 ;/**************************************************************************\
 ;*                                                                          *
-;*                           VÇletlensz†mgener†tor                          *
+;*                           V√©letlensz√°mgener√°tor                          *
 ;*                                                                          *
-;*                                    årta :                                *
+;*                                    √çrta :                                *
 ;*                                                                          *
-;*                                Tîrîk Viktor                              *
+;*                                T√∂r√∂k Viktor                              *
 ;*                                                                          *
-;*                     A C-- programban tal†lt rutin alapj†n                *
+;*                     A C-- programban tal√°lt rutin alapj√°n                *
 ;*                                                                          *
 ;*                             ANNO DOMINI MCMXCVI                          *
 ;*                                                                          *
@@ -24,7 +24,7 @@ _CODE SEGMENT
  ASSUME CS : _CODE, DS : _DATA
 
 ;-------------------------------------
-; Random fÅggvÇny inicializ†l†sa
+; Random f√ºggv√©ny inicializ√°l√°sa
 ;-------------------------------------
 
  PUBLIC Randomize
@@ -57,8 +57,8 @@ _CODE SEGMENT
  Randomize ENDP
 
 ;-----------------------------------
-; VÇletlensz†mgener†tor
-; ax-ben adja vissza a sz†mot
+; V√©letlensz√°mgener√°tor
+; ax-ben adja vissza a sz√°mot
 ;-----------------------------------
 
  PUBLIC Random
