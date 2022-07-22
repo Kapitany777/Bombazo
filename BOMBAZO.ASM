@@ -1,10 +1,10 @@
 ;/**************************************************************************\
 ;*                                                                          *
-;*                               Bomb†z¢ j†tÇk                              *
+;*                               Bomb√°z√≥ j√°t√©k                              *
 ;*                                                                          *
-;*                                   årta :                                 *
+;*                                   √çrta :                                 *
 ;*                                                                          *
-;*                                Tîrîk Viktor                              *
+;*                                T√∂r√∂k Viktor                              *
 ;*                                                                          *
 ;*                            ANNO DOMINI MCMXCVI                           *
 ;*                                                                          *
@@ -22,14 +22,14 @@ STACK_SEG ENDS
 
 DATA_SEG SEGMENT
 
-; A bevezetì szîveg
+; A bevezet≈ë sz√∂veg
 
- Cim   db 'Bomb†z¢',0
- Iro   db 'årta : Tîrîk Viktor',0
+ Cim   db 'Bomb√°z√≥',0
+ Iro   db '√çrta : T√∂r√∂k Viktor',0
  Datum db 'ANNO DOMINI MCMXCVI',0
  Spc   db 'Space...',0
 
- Gyoz  db 'Gyìzelem!',0
+ Gyoz  db 'Gy≈ëzelem!',0
 
 ; A tervezett karakterek adatai
 
@@ -39,16 +39,16 @@ DATA_SEG SEGMENT
  Bomba   db 0,0,0,0,0,16,56,56,16,186,124,56,56,56,56,16
 
  xk dw 2
- yk dw 2    ; A repÅlì koordin†t†i
+ yk dw 2    ; A rep√ºl≈ë koordin√°t√°i
 
  bxk dw 0
- byk dw 0   ; A bomba koordin†t†i
+ byk dw 0   ; A bomba koordin√°t√°i
 
- a db 0     ; SegÇdv†ltoz¢
+ a db 0     ; Seg√©dv√°ltoz√≥
 
 DATA_SEG ENDS
 
-;------------------------------- K¢dszegmens --------------------------------
+;------------------------------- K√≥dszegmens --------------------------------
 
 CODE_SEG SEGMENT
 
@@ -60,7 +60,7 @@ CODE_SEG SEGMENT
  EXTRN Razas : PROC
 
 ;************************************
-; A j†tÇk bevezetì rÇsze
+; A j√°t√©k bevezet≈ë r√©sze
 ;************************************
 
  Bevezetes PROC
@@ -96,7 +96,7 @@ CODE_SEG SEGMENT
  Bevezetes ENDP
 
 ;*************************************
-; A karakterek megtervezÇse
+; A karakterek megtervez√©se
 ;*************************************
 
  Karakterek_tervezese PROC
@@ -130,7 +130,7 @@ CODE_SEG SEGMENT
  Karakterek_tervezese ENDP
 
 ;*****************************
-; A h†zak kirajzol†sa
+; A h√°zak kirajzol√°sa
 ;*****************************
 
  Hazak_kirajzolasa PROC
@@ -164,7 +164,7 @@ CODE_SEG SEGMENT
   mov di,ax
   add di,bx
   shl di,1
-  mov al,'¿'
+  mov al,'√Ä'
   mov ah,14+16
 
  @HK2 :
@@ -185,7 +185,7 @@ CODE_SEG SEGMENT
  Hazak_kirajzolasa ENDP
 
 ;*********************************
-; A j†tÇk
+; A j√°t√©k
 ;*********************************
 
  Jatek PROC
@@ -195,7 +195,7 @@ CODE_SEG SEGMENT
 
  @Jatek_eleje :
 
- ; RepÅlì kirajzol†sa
+ ; Rep√ºl≈ë kirajzol√°sa
 
   mov ax,80
   mov bx,yk
@@ -204,16 +204,16 @@ CODE_SEG SEGMENT
   shl di,1
   add di,ax
 
-  mov al,'¡'
+  mov al,'√Å'
   mov es:[di],al
-  mov al,'¬'
+  mov al,'√Ç'
   mov es:[di+2],al
 
- ; Mi van a repÅlì elìtt?
+ ; Mi van a rep√ºl≈ë el≈ëtt?
   mov al,es:[di+4]
   mov a,al
 
- ; V†rakoz†s
+ ; V√°rakoz√°s
   mov dx,60000
 
  @WW :
@@ -228,16 +228,16 @@ CODE_SEG SEGMENT
   cmp al,8
   jne @RASW
 
- ; RepÅlì letîrlÇse
+ ; Rep√ºl≈ë let√∂rl√©se
   mov al,' '
   mov es:[di],al
   mov es:[di+2],al
 
   cmp byk,0
- ; Ekkor nem kell bomb†t dobni
+ ; Ekkor nem kell bomb√°t dobni
   je @NOBOMB
 
- ; Bomba mozgat†sa
+ ; Bomba mozgat√°sa
   mov ax,80
   mov bx,byk
   mul bx
@@ -247,7 +247,7 @@ CODE_SEG SEGMENT
 
   mov al,' '
   mov es:[di],al
-  mov al,'√'
+  mov al,'√É'
   mov es:[di+80],al
   inc byk
 
@@ -261,7 +261,7 @@ CODE_SEG SEGMENT
 
  @NOBOMB :
 
- ; Volt-e billentyñlenyom†s?
+ ; Volt-e billenty≈±lenyom√°s?
   mov ah,1
   int 16h
   jz @Nem_b
@@ -273,7 +273,7 @@ CODE_SEG SEGMENT
   jne @Nem_b
 
   cmp byk,0
- ; MÇg repÅl a bomba
+ ; M√©g rep√ºl a bomba
   jne @Nem_b
 
   mov ax,xk
@@ -289,7 +289,7 @@ CODE_SEG SEGMENT
   cmp xk,38
   jne @NOSVEG
 
- ; Sor vÇgÇre ÇrtÅnk
+ ; Sor v√©g√©re √©rt√ºnk
   mov ax,2
   mov xk,ax
   inc yk
@@ -339,7 +339,7 @@ CODE_SEG SEGMENT
  Jatek ENDP
 
 ;*****************************
-; A fìprogram
+; A f≈ëprogram
 ;*****************************
 
  START :
@@ -352,7 +352,7 @@ CODE_SEG SEGMENT
 
   call Bevezetes
 
-; 40x25-îs kÇpernyì bekapcsol†sa
+; 40x25-√∂s k√©perny≈ë bekapcsol√°sa
 
   mov ax,0
   int 10h
